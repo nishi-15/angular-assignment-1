@@ -1,5 +1,3 @@
-import { ArrayType } from "@angular/compiler";
-
 export interface Employee {
   firstName: string,
   lastName: string,
@@ -9,14 +7,22 @@ export interface Employee {
   userName: string,
   password: string,
   gender: string,
-  qualifications: string[],
-  experience: string[],
+  qualifications: Array<Qualifications>,
+  experience: Array<Experiences>,
   coadingLanguages: Array<CoadingLanguages>
 }
-export interface CoadingLanguages{
+
+export interface Qualifications {
+  name: string
+}
+
+export interface Experiences {
+  name: string
+}
+
+export interface CoadingLanguages {
   id:string,
   language:string,
-  checked:boolean;
-
+  checked:boolean
 }
 
