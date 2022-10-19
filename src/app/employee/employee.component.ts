@@ -63,7 +63,7 @@ export class EmployeeComponent implements OnInit {
     });
   }
 
-  get f(){
+  get formData(){
     return this.form.controls;
   }
 

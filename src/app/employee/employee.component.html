@@ -4,25 +4,25 @@
     <div class="form-group">
       <label for="firstName"> First Name: </label>
       <input type="text" id="firstName" name="firstName" formControlName="firstName" class="form-control" [(ngModel)]="employeeDetails.firstName" />
-      <div *ngIf="f.firstName.errors && f.firstName.invalid" class="alert alert-danger">
-        <div *ngIf="f.firstName.errors.required">LastName is required.</div>
+      <div *ngIf="formData.firstName.errors && formData.firstName.invalid" class="alert alert-danger">
+        <div *ngIf="formData.firstName.errors.required">FirstName is required.</div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="lastName"> Last Name: </label>
       <input type="text" id="lastName" name="lastName" formControlName="lastName" class="form-control" [(ngModel)]="employeeDetails.lastName" />
-      <div *ngIf="f.lastName.errors && f.lastName.invalid" class="alert alert-danger">
-        <div *ngIf="f.lastName.errors.required">LastName is required.</div>
+      <div *ngIf="formData.lastName.errors && formData.lastName.invalid" class="alert alert-danger">
+        <div *ngIf="formData.lastName.errors.required">LastName is required.</div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="email"> E-Mail: </label>
       <input type="email" id="email" name="email" formControlName="email" class="form-control" [(ngModel)]="employeeDetails.email" />
-      <div *ngIf="f.email.errors && f.email.invalid" class="alert alert-danger">
-        <div *ngIf="f.email.errors.required">Email is required.</div>
-        <div *ngIf="f.email.errors.pattern">Please, Enter valid Email Address.</div>
+      <div *ngIf="formData.email.errors && formData.email.invalid" class="alert alert-danger">
+        <div *ngIf="formData.email.errors.required">Email is required.</div>
+        <div *ngIf="formData.email.errors.pattern">Please, Enter valid Email Address.</div>
       </div>
     </div>
 
@@ -30,9 +30,9 @@
       <label for="contactNumber"> Contact Number: </label>
       <input type="tel" id="contactNumber" formControlName="contactNumber" class="form-control"
         [(ngModel)]="employeeDetails.contactNumber" />
-        <div *ngIf="f.contactNumber.errors && f.contactNumber.invalid" class="alert alert-danger">
-          <div *ngIf="f.contactNumber.errors.required">Contact Number is required.</div>
-          <div *ngIf="f.contactNumber.errors.pattern">Please, Enter 10 digit Contact Number.</div>
+        <div *ngIf="formData.contactNumber.errors && formData.contactNumber.invalid" class="alert alert-danger">
+          <div *ngIf="formData.contactNumber.errors.required">Contact Number is required.</div>
+          <div *ngIf="formData.contactNumber.errors.pattern">Please, Enter 10 digit Contact Number.</div>
       </div>
     </div>
 
@@ -40,16 +40,16 @@
       <label for="address"> Address: </label>
       <textarea class="form-control" rows="3" formControlName="address" name="address" id="address" draggable="true"
         [(ngModel)]="employeeDetails.address"></textarea>
-        <div *ngIf="f.address.errors && f.address.invalid" class="alert alert-danger">
-          <div *ngIf="f.address.errors.required">Address is required.</div>
+        <div *ngIf="formData.address.errors && formData.address.invalid" class="alert alert-danger">
+          <div *ngIf="formData.address.errors.required">Address is required.</div>
         </div>
     </div>
 
     <div class="form-group">
       <label for="userName"> User Name: </label>
       <input type="text" id="userName" name="userName" formControlName="userName" class="form-control" [(ngModel)]="employeeDetails.userName" />
-      <div *ngIf="f.userName.errors && f.userName.invalid" class="alert alert-danger">
-        <div *ngIf="f.userName.errors.required">UserName is required.</div>
+      <div *ngIf="formData.userName.errors && formData.userName.invalid" class="alert alert-danger">
+        <div *ngIf="formData.userName.errors.required">UserName is required.</div>
       </div>
     </div>
 
@@ -57,8 +57,8 @@
       <label for="password"> Password: </label>
       <input type="password" id="password" formControlName="password" name="password" class="form-control"
         [(ngModel)]="employeeDetails.password" />
-        <div *ngIf="f.password.errors && f.password.invalid" class="alert alert-danger">
-          <div *ngIf="f.password.errors.required">Password is required.</div>
+        <div *ngIf="formData.password.errors && formData.password.invalid" class="alert alert-danger">
+          <div *ngIf="formData.password.errors.required">Password is required.</div>
         </div>
     </div>
 
@@ -72,8 +72,8 @@
         <input type="radio" value="Female" name="gender" formControlName="gender" [(ngModel)]="employeeDetails.gender">
         <label class="form-check-label" for="female"> Female </label>
       </div>
-      <div *ngIf="f.gender.errors && f.gender.invalid" class="alert alert-danger">
-        <div *ngIf="f.gender.errors.required">Gender is required.</div>
+      <div *ngIf="formData.gender.errors && formData.gender.invalid" class="alert alert-danger">
+        <div *ngIf="formData.gender.errors.required">Gender is required.</div>
       </div>
     </div>
 
@@ -82,8 +82,8 @@
         <ng-select formControlName="qualifications" bindLabel="name" [(ngModel)]="employeeDetails.qualifications">
           <ng-option *ngFor="let qualification of qualifications" [value]="qualification.name">{{qualification.name}}</ng-option>
         </ng-select>
-        <div *ngIf="f.qualifications.errors && f.qualifications.invalid" class="alert alert-danger">
-          <div *ngIf="f.qualifications.errors.required">Qualification is required.</div>
+        <div *ngIf="formData.qualifications.errors && formData.qualifications.invalid" class="alert alert-danger">
+          <div *ngIf="formData.qualifications.errors.required">Qualification is required.</div>
         </div>
     </div>
 
@@ -92,8 +92,8 @@
       <ng-select formControlName="experience" bindLabel="name" [(ngModel)]="employeeDetails.experience">
         <ng-option *ngFor="let experience of experience" [value]="experience.name">{{experience.name}}</ng-option>
       </ng-select>
-      <div *ngIf="f.experience.errors && f.experience.invalid" class="alert alert-danger">
-        <div *ngIf="f.experience.errors.required">Experience is required.</div>
+      <div *ngIf="formData.experience.errors && formData.experience.invalid" class="alert alert-danger">
+        <div *ngIf="formData.experience.errors.required">Experience is required.</div>
       </div>
     </div>
 
